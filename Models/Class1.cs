@@ -1,4 +1,5 @@
-﻿public class Tournament
+﻿// Klassen Tournament
+public class Tournament
 {
     public int TournamentID { get; set; }
     public string Type { get; set; }

@@ -1,4 +1,5 @@
-﻿public class Member
+﻿using Laboration_2.Models;
+public class Member
 {
     public int MemberID { get; set; }
     public String FirstName { get; set; }

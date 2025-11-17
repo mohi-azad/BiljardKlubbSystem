@@ -1,0 +1,23 @@
+﻿@model List<Member>
+
+<h2>Alla medlemmar</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Förnamn</th>
+        <th>Efternamn</th>
+        <th>Ålder</th>
+        <th>Poäng</th>
+    </tr>
+
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.MemberID</td>
+            <td>@m.FirstName @m.LastName</td>
+            <td>@m.Age</td>
+            <td>@m.Score</td>
+        </tr>
+    }
+</table>

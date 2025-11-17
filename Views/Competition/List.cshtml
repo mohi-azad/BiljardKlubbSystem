@@ -1,0 +1,20 @@
+﻿@model List<MemberCompetition>
+
+<h2>Deltagande</h2>
+
+<table>
+    <tr>
+        <th>Medlem</th>
+        <th>Turnering</th>
+        <th>Resultat</th>
+    </tr>
+
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.MemberID</td>
+            <td>@c.TournamentID</td>
+            <td>@c.Result</td>
+        </tr>
+    }
+</table>

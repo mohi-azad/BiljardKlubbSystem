@@ -5,14 +5,17 @@ namespace Laboration_2.Controllers
 {
     public class MemberController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+        [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            return View("Add_Member");
         }
+        [HttpPost]
         public IActionResult Add(Member member)
         {
             member.MemberID = AppData.Members.Count + 1;
@@ -24,8 +27,6 @@ namespace Laboration_2.Controllers
         {
             return View(AppData.Members);
         }
-
-        
 
     }
 }

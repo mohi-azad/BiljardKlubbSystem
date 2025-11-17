@@ -18,6 +18,15 @@ namespace Laboration_2.Controllers
             AppData.MemberCompetitions.Add(mc);
             return RedirectToAction("List");
         }
+
+        /*
+        public IActionResult CountParticipants(int tournamentsID) {
+            var Count = AppData.MemberCompetitions.Count(mc => mc.TournamentID == tournamentsID);
+            ViewBag.Number = Count;
+            return View();
+        }
+        */
+
         public IActionResult List()
         {
             return View(AppData.MemberCompetitions);

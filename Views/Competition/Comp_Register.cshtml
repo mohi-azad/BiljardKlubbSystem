@@ -1,0 +1,30 @@
+﻿@{
+    var members = ViewBag.Members as List<Member>;
+    var tournaments = ViewBag.Tournaments as List<Tournament>;
+}
+
+<h2>Registrera deltagande</h2>
+
+<form method="post">
+
+    <label>Medlem:</label>
+    <select name="memberID">
+        @foreach (var m in members)
+        {
+            <option value="@m.MemberID">@m.FirstName @m.LastName</option>
+        }
+    </select>
+
+    <label>Turnering:</label>
+    <select name="tournamentID">
+        @foreach (var t in tournaments)
+        {
+            <option value="@t.TournamentID">@t.TournamentType</option>
+        }
+    </select>
+
+    <label>Resultat:</label>
+    <input type="number" name="result" />
+
+    <button type="submit">Registrera</button>
+</form>

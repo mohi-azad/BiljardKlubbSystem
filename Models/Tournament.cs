@@ -17,6 +17,7 @@ public class Tournament
     {
         TournamentID = tournamentID;
         TournamentType = tournamentType;
+        Date = date;
         StartTime = startTime;
     }
 }

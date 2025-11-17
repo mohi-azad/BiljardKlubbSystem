@@ -1,0 +1,22 @@
+﻿@model List<Tournament>
+
+<h2>Turneringar</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Typ</th>
+        <th>Datum</th>
+        <th>Starttid</th>
+    </tr>
+
+    @foreach (var t in Model)
+    {
+        <tr>
+            <td>@t.TournamentID</td>
+            <td>@t.TournamentType</td>
+            <td>@t.Date.ToShortDateString()</td>
+            <td>@t.StartTime</td>
+        </tr>
+    }
+</table>

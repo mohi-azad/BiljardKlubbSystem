@@ -6,12 +6,14 @@ namespace Laboration_2.Controllers
 {
     public class CompetitionController : Controller
     {
+        [HttpGet]
         public IActionResult Register()
         {
             ViewBag.Members = AppData.Members;
             ViewBag.Tournament = AppData.Tournaments;
             return View();
         }
+        [HttpPost]
         public IActionResult Register(int memberID, int tournamentID, int? result)
         {
             var mc = new MemberCompetition(memberID, tournamentID, result);

@@ -9,6 +9,7 @@ public class Tournament
     public TimeSpan StartTime { get; set; }
     public Tournament()
     {
+        TournamentID = TournamentID;
         TournamentType = "";
         Date = DateTime.Today;
         StartTime = new TimeSpan();

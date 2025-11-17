@@ -5,16 +5,20 @@ namespace Laboration_2.Controllers
 {
     public class TournamentController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+        [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            return View("Add_Tournament");
         }
-        public IActionResult Add(Tournament tournament)
+        [HttpPost]
+        public IActionResult Add(Tournament tournament, string StartTime)
         {
+            tournament.StartTime = TimeSpan.Parse(StartTime);
             tournament.TournamentID = AppData.Tournaments.Count + 1;
             AppData.Tournaments.Add(tournament);
             return RedirectToAction("List");

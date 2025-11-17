@@ -2,22 +2,25 @@
 
 <h2>Alla medlemmar</h2>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Förnamn</th>
-        <th>Efternamn</th>
-        <th>Ålder</th>
-        <th>Poäng</th>
-    </tr>
-
-    @foreach (var m in Model)
-    {
+<table class="table table-strped table-bordered"> 
+    <thead>
         <tr>
-            <td>@m.MemberID</td>
-            <td>@m.FirstName @m.LastName</td>
-            <td>@m.Age</td>
-            <td>@m.Score</td>
+            <th>ID</th>
+            <th>Namn</th>
+            <!--<th>Efternamn</th>-->
+            <th>Ålder</th>
+            <th>Poäng</th>
         </tr>
-    }
+
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.MemberID</td>
+                <td>@m.FirstName @m.LastName</td>
+                <td>@m.Age</td>
+                <td>@m.Score</td>
+            </tr>
+        }
+    </thead>
+    
 </table>

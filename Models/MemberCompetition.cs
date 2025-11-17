@@ -11,5 +11,4 @@ public class MemberCompetition
         TournamentID = tournamentID;
         Result = result;
     }
-
 }

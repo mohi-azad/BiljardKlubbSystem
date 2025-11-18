@@ -7,9 +7,11 @@
 
 @if(TempData["Error"] != null)
 {
+    <p>@ViewData["Error"]</p>
     <p style=" color:red">"TempData["Error"]"</p>
+
 }
-else
+else if (TempData["Message"] != null)
 {
     <p style="color:green">"TempData["Message"]</p>
 }

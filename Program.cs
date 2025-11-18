@@ -20,13 +20,37 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    .WithStaticAssets(); 
+/*
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Member}/{action=List}/{id?}")
     .WithStaticAssets();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Member}/{action=Add_Member}/{id?}")
+    .WithStaticAssets();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Tournament}/{action=List}/{id?}")
+    .WithStaticAssets();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Competition}/{action=List}/{id?}")
+    .WithStaticAssets();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Competition}/{action=Register}/{id?}")
+    .WithStaticAssets();
+*/
 
 app.Run();

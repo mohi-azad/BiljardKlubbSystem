@@ -1,14 +1,17 @@
 ﻿
-public class MemberCompetition 
-{ 
-    public int MemberID { get; set; }
-    public int TournamentID { get; set; }
-    public int? Result {  get; set; }
+public class MemberCompetition
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int? Score { get; set; }
+    public string TournamentType { get; set; }
 
-    public MemberCompetition(int memberID,  int tournamentID, int? result)
+    public MemberCompetition(string firstName, string lastName, int? score, string tournamentType)
     {
-        MemberID = memberID;
-        TournamentID = tournamentID;
-        Result = result;
+        FirstName = firstName;
+        LastName = lastName;
+        Score = score;
+        TournamentType = tournamentType;
     }
 }
+

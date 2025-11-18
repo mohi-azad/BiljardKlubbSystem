@@ -15,12 +15,11 @@
             new Tournament(2, "9-boll", new DateTime(2025,11,20), new TimeSpan(18,0,0)),
             new Tournament(3, "10-boll", new DateTime(2025,11,24), new TimeSpan(18,0,0))
         };
-        public static List<MemberCompetition> MemberCompetitions = new List<MemberCompetition>()
+        public static List<MemberCompetition> MemberCompetition = new List<MemberCompetition>()
         {
-            new MemberCompetition(1, 1, 100),  
-            new MemberCompetition(2, 2, 200),  
-            new MemberCompetition(3, 3, 150),  
-            new MemberCompetition(1, 2, 180)
+            new MemberCompetition("Mohsen", "Azad", 1000, "8-boll"),  
+            new MemberCompetition("Jona", "Simonsson", 3000, "9-boll"),  
+            new MemberCompetition("Alex", "Lundberg", 2000, "10-boll")
         };
     }
 }

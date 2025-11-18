@@ -6,11 +6,6 @@ namespace Laboration_2.Controllers
     public class MemberController : Controller
     {
         [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
-        }
-        [HttpGet]
         public IActionResult Add()
         {
             return View("Add_Member");
@@ -22,11 +17,9 @@ namespace Laboration_2.Controllers
             AppData.Members.Add(member);
             return RedirectToAction("List");
         }
-
         public IActionResult List()
         {
             return View(AppData.Members);
         }
-
     }
 }

@@ -1,30 +1,38 @@
-﻿@{
+﻿
+@model MemberCompetition
+@{
     var members = ViewBag.Members as List<Member>;
     var tournaments = ViewBag.Tournaments as List<Tournament>;
 }
 
-<h2>Registrera deltagande</h2>
+@if(TempData["Error"] != null)
+{
+    <p style=" color:red">"TempData["Error"]"</p>
+}
+else
+{
+    <p style="color:green">"TempData["Message"]</p>
+}
+
+<h2>Registrera deltagande i tunering</h2>
 
 <form method="post">
 
     <label>Medlem:</label>
-    <select name="memberID">
+    <select name="MemberID" required>
         @foreach (var m in members)
         {
             <option value="@m.MemberID">@m.FirstName @m.LastName</option>
         }
     </select>
 
-    <label>Turnering:</label>
-    <select name="tournamentID">
+    <label>Tunering:</label>
+    <select name="TournamentID" required>
         @foreach (var t in tournaments)
         {
             <option value="@t.TournamentID">@t.TournamentType</option>
         }
     </select>
-
-    <label>Resultat:</label>
-    <input type="number" name="result" />
 
     <button type="submit">Registrera</button>
 </form>

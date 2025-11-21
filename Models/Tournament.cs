@@ -1,6 +1,5 @@
-﻿// Klassen Tournament
+﻿
 using Laboration_2.Models;
-
 public class Tournament
 {
     public int TournamentID { get; set; }
@@ -22,3 +21,4 @@ public class Tournament
         StartTime = startTime;
     }
 }
+

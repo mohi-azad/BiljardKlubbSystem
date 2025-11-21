@@ -4,22 +4,18 @@
     var members = ViewBag.Members as List<Member>;
     var tournaments = ViewBag.Tournaments as List<Tournament>;
 }
-
 @if(TempData["Error"] != null)
 {
     <p>@ViewData["Error"]</p>
     <p style=" color:red">"TempData["Error"]"</p>
-
 }
 else if (TempData["Message"] != null)
 {
     <p style="color:green">"TempData["Message"]</p>
 }
-
 <h2>Registrera deltagande i tunering</h2>
 
 <form method="post">
-
     <label>Medlem:</label>
     <select name="MemberID" required>
         @foreach (var m in members)
@@ -27,7 +23,6 @@ else if (TempData["Message"] != null)
             <option value="@m.MemberID">@m.FirstName @m.LastName</option>
         }
     </select>
-
     <label>Tunering:</label>
     <select name="TournamentID" required>
         @foreach (var t in tournaments)
@@ -35,6 +30,5 @@ else if (TempData["Message"] != null)
             <option value="@t.TournamentID">@t.TournamentType</option>
         }
     </select>
-
     <button type="submit">Registrera</button>
 </form>

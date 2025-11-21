@@ -1,15 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Laboration_2.Models;
-
 namespace Laboration_2.Controllers
 {
     public class TournamentController : Controller
     {
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
-        }
+        
         [HttpGet]
         public IActionResult Add()
         {
@@ -23,7 +18,6 @@ namespace Laboration_2.Controllers
             AppData.Tournaments.Add(tournament);
             return RedirectToAction("List");
         }
-
         public IActionResult List()
         {
             return View(AppData.Tournaments);

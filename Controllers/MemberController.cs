@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 using Laboration_2.Models;
-
 namespace Laboration_2.Controllers
 {
     public class MemberController : Controller
@@ -23,3 +23,4 @@ namespace Laboration_2.Controllers
         }
     }
 }
+

@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 using Laboration_2.Models;
-
 namespace Laboration_2.Controllers
 {
     public class CompetitionController : Controller
@@ -22,7 +22,6 @@ namespace Laboration_2.Controllers
                 TempData["Error"] = "Fel val på medlem eller turnering.";
                 return View("Register");
             }
-         
             var exists = AppData.MemberCompetition.Any(mc =>
                 mc.FirstName == member.FirstName &&
                 mc.LastName == member.LastName &&
@@ -33,27 +32,20 @@ namespace Laboration_2.Controllers
                 TempData["Error"] = "Medlemmen är redan registrerad på den turneringen.";
                 return RedirectToAction("Register");
             }
-
             var mc = new MemberCompetition(
                 member.FirstName,
                 member.LastName,
                 member.Score,
                 tournament.TournamentType
             );
-
             AppData.MemberCompetition.Add(mc);
+            HttpContext.Session.SetString("LastRegistered", member.FirstName + " " + member.LastName);
             TempData["Message"] = "Deltagaren är nu registrerad.";
             return RedirectToAction("List");
         }
-
-        
         public IActionResult List()
         {
             return View(AppData.MemberCompetition);
-        }
-        public IActionResult Index()
-        {
-            return View();
         }
     }
 }

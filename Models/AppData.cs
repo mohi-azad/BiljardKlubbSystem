@@ -1,4 +1,5 @@
-﻿namespace Laboration_2.Models
+﻿
+namespace Laboration_2.Models
 {
     public class AppData
     {

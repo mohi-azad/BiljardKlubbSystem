@@ -6,12 +6,11 @@
 }
 @if(TempData["Error"] != null)
 {
-    <p>@ViewData["Error"]</p>
-    <p style=" color:red">"TempData["Error"]"</p>
+    <p style=" color:red">@TempData["Error"]"</p>
 }
 else if (TempData["Message"] != null)
 {
-    <p style="color:green">"TempData["Message"]</p>
+    <p style="color:green">@TempData["Message"]</p>
 }
 <h2>Registrera deltagande i tunering</h2>
 
